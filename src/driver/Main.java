@@ -14,6 +14,12 @@ public class Main {
 
         System.out.println(heapOfLetters);
 
+        for (String input: inputs){
+            System.out.print(heapOfLetters.remove());
+        }
+
+        System.out.println(System.lineSeparator());
+        System.out.println(heapOfLetters);
 
     }
 }

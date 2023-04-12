@@ -1,5 +1,7 @@
 package heap;
 
+import java.util.Arrays;
+
 public class BinaryHeap<T extends Comparable<T>>
 {
     private T[] heap;
@@ -30,7 +32,36 @@ public class BinaryHeap<T extends Comparable<T>>
     }
 
     public T remove(){
-        return null;
+        if(size == 0){throw new IndexOutOfBoundsException("You cannot remove from an empty heap.");};
+        T head = heap[1];
+        heap[1] = heap[size];
+        heap[size] = null;
+        size--;
+        sink(1);
+        return head;
     }
 
+    private void sink(int parentIndex) {
+        int left = parentIndex * 2;
+        int right = left + 1;
+        if(left <= size && heap[parentIndex].compareTo(heap[left]) > 0){
+            T temp = heap[parentIndex];
+            heap[parentIndex] = heap[left];
+            heap[left] = temp;
+            sink(left);
+        }
+        if(right <= size && heap[parentIndex].compareTo(heap[right]) > 0){
+            T temp = heap[parentIndex];
+            heap[parentIndex] = heap[right];
+            heap[right] = temp;
+            sink(right);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "BinaryHeap{" +
+                "heap=" + Arrays.toString(heap) +
+                '}';
+    }
 }
