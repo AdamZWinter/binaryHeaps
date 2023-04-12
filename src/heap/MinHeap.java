@@ -2,12 +2,12 @@ package heap;
 
 import java.util.Arrays;
 
-public class BinaryHeap<T extends Comparable<T>>
+public class MinHeap<T extends Comparable<T>>
 {
     private T[] heap;
     private int size;
 
-    public BinaryHeap(){
+    public MinHeap(){
         heap = (T[])new Comparable[20];
         size = 0;
     }

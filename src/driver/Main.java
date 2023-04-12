@@ -1,11 +1,11 @@
 package driver;
 
-import heap.BinaryHeap;
+import heap.MinHeap;
 
 public class Main {
     public static void main(String[] args) {
 
-        BinaryHeap<String> heapOfLetters = new BinaryHeap<>();
+        MinHeap<String> heapOfLetters = new MinHeap<>();
         String[] inputs = {"b", "p", "z", "h", "e", "a", "o", "w", "o", "r", "l", "d"};
 
         for (String input: inputs){
